@@ -5,7 +5,7 @@ end
 
 require 'formtastic'
 
-Formtastic::SemanticFormBuilder.class_eval
+Formtastic::SemanticFormBuilder.class_eval do
 
   def date_input(method, options = {})
     value = @object.send(method)
