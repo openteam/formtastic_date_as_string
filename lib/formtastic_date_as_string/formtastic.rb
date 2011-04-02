@@ -1,8 +1,10 @@
 Formtastic::SemanticFormBuilder.class_eval do
 
   def date_input(method, options = {})
-    options.merge! :input_html    => { :value => I18n.l(object[method]) } if object[method]
-    options.merge! :wrapper_html  => { :class => :date }
+    options[:input_html] ||= {}
+    options[:input_html][:class] = [options[:input_html][:class], :date].compact.join ' '
+    options[:wrapper_html] ||= {}
+    options[:input_html][:class] = [options[:wrapper_html][:class], :date].compact.join ' '
     string_input method, options
   end
 
