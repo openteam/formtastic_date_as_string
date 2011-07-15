@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.name        = "formtastic_date_as_string"
   s.version     = FormtasticDateAsString::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Dmitry Lihachev"]
-  s.email       = ["lda@openteam.ru"]
+  s.authors     = ["Dmitry Lihachev", "Evgeny Lapin"]
+  s.email       = ["lda@openteam.ru", "lev@openteam.ru"]
   s.homepage    = "http://github.com/openteam/formtastic_date_as_string"
   s.summary     = %q{Creates input :as => :string for date firld}
   s.description = %q{Creates input :as => :string for date field}
