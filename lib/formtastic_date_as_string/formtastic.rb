@@ -3,7 +3,7 @@ Formtastic::SemanticFormBuilder.class_eval do
   def date_input(method, options = {})
     options[:input_html] ||= {}
     options[:input_html][:class] = [options[:input_html][:class], :date].compact.join ' '
-    options[:input_html][:value] = I18n.l(object[method]) if object[method].is_a? Date
+    options[:input_html][:value] = I18n.l(object.send(method)) if object.send(method).is_a? Date
     options[:wrapper_html] ||= {}
     options[:input_html][:class] = [options[:wrapper_html][:class], :date].compact.join ' '
     string_input method, options
@@ -12,7 +12,7 @@ Formtastic::SemanticFormBuilder.class_eval do
   def datetime_input(method, options = {})
     options[:input_html] ||= {}
     options[:input_html][:class] = [options[:input_html][:class], :datetime].compact.join ' '
-    options[:input_html][:value] = I18n.l(object[method], :format => :datetime) if object[method].is_a?(DateTime) || object[method].is_a?(Time)
+    options[:input_html][:value] = I18n.l(object.send(method), :format => :datetime) if object.send(method).is_a?(DateTime)
     options[:wrapper_html] ||= {}
     options[:input_html][:class] = [options[:wrapper_html][:class], :datetime].compact.join ' '
     string_input method, options
