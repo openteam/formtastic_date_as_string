@@ -12,7 +12,7 @@ Formtastic::SemanticFormBuilder.class_eval do
   def datetime_input(method, options = {})
     options[:input_html] ||= {}
     options[:input_html][:class] = [options[:input_html][:class], :datetime].compact.join ' '
-    options[:input_html][:value] = I18n.l(object.send(method), :format => :datetime) if object.send(method).is_a?(DateTime)
+    options[:input_html][:value] = I18n.l(object.send(method), :format => :datetime) if object.send(method).is_a?(DateTime) || object.send(method).is_a?(Time)
     options[:wrapper_html] ||= {}
     options[:input_html][:class] = [options[:wrapper_html][:class], :datetime].compact.join ' '
     string_input method, options
